@@ -1,0 +1,45 @@
+Servers
+-------
+Server1: App
+Server2: Web
+Server3: DB
+Server4: ADDS
+Firewall: FGT
+
+
+	Sample Addressing
+
+	nagios-xi		192.168.1.1		SSH
+	app-server		192.168.2.1		SSH
+	web-server		192.168.3.1		SSH
+
+
+
+Deployment options
+------------------
+On-premises
+On Cloud (Aws,Gcp,Azure,Digital Ocean,Linode)
+
+
+
+Tasks
+-----
+1. Setup nagios-xi.
+2. add hosts in nagios-xi
+
+
+nagios-xi credentials
+
+user: 
+password: 
+
+
+add a firewall rule to allow web access for token
+
+firewall-cmd --list-all
+firewall-cmd --add-service=http --permanent
+firewall-cmd --add-service=https --permanent
+firewall-cmd --add-port=5693/tcp --permanent
+firewall-cmd --reload
+
+
